@@ -1,0 +1,12 @@
+server:
+  port: 0
+
+debugmind:
+  ai:
+    provider: mock
+  gemini:
+    api-key: test-key
+    model: gemini-1.5-flash
+    base-url: http://localhost:9999
+  sandbox:
+    timeout-seconds: 5

@@ -73,8 +73,8 @@ class LanguageDetector {
     }
 
     if (lang === 'python') {
-      if (filesStr.includes('pytest.ini') || filesStr.includes('conftest.py')) return 'pytest';
-      return 'unittest';
+      if (filesStr.includes('unittest') && !filesStr.includes('pytest')) return 'unittest';
+      return 'pytest';
     }
 
     if (lang === 'java') {

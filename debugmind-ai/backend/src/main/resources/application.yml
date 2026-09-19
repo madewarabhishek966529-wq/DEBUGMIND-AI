@@ -1,0 +1,33 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: debugmind-backend
+  main:
+    banner-mode: console
+
+debugmind:
+  ai:
+    provider: ${AI_PROVIDER:gemini}
+  gemini:
+    api-key: ${GEMINI_API_KEY:}
+    model: ${GEMINI_MODEL:gemini-1.5-flash}
+    base-url: ${GEMINI_BASE_URL:https://generativelanguage.googleapis.com}
+  sandbox:
+    timeout-seconds: ${SANDBOX_TIMEOUT_SECONDS:15}
+    temp-dir: ${SANDBOX_TEMP_DIR:}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    com.debugmind: DEBUG

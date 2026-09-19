@@ -24,7 +24,7 @@
     "AI coding assistant",
     "code quality"
   ],
-  "icon": "media/icon.svg",
+  "icon": "media/icon.png",
   "main": "./extension.js",
   "activationEvents": [
     "onStartupFinished"
