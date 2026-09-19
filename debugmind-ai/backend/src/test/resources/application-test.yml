@@ -5,8 +5,8 @@ debugmind:
   ai:
     provider: mock
   gemini:
-    api-key: test-key
+    api-key: ""
     model: gemini-1.5-flash
-    base-url: http://localhost:9999
+    base-url: https://generativelanguage.googleapis.com
   sandbox:
     timeout-seconds: 5

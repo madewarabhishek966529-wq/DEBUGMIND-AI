@@ -1,0 +1,38 @@
+# Environment & Secrets
+.env
+*.env.local
+
+# Node / VS Code Extension
+node_modules/
+dist/
+out/
+*.vsix
+.vscode-test/
+
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDEs & System
+.idea/
+*.iml
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Tools
+tools/
