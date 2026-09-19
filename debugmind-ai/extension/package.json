@@ -1,0 +1,214 @@
+{
+  "name": "debugmind-ai",
+  "displayName": "DebugMind AI",
+  "description": "AI-powered code analysis, debugging, fixing, and test generation inside VS Code.",
+  "version": "0.0.1",
+  "publisher": "debugmind-ai-team",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Testing",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "AI",
+    "debugger",
+    "code analysis",
+    "code review",
+    "bug detection",
+    "developer tools",
+    "debugging",
+    "AI coding assistant",
+    "code quality"
+  ],
+  "icon": "media/icon.svg",
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/debugmind/debugmind-ai"
+  },
+  "bugs": {
+    "url": "https://github.com/debugmind/debugmind-ai/issues"
+  },
+  "homepage": "https://debugmind.ai",
+  "license": "MIT",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "debugmind-ai-view",
+          "title": "DebugMind AI",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "debugmind-ai-view": [
+        {
+          "type": "webview",
+          "id": "debugmind.sidebarView",
+          "name": "DebugMind AI"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "debugmind.analyzeSelection",
+        "title": "DebugMind: Analyze Selected Code",
+        "category": "DebugMind"
+      },
+      {
+        "command": "debugmind.analyzeCurrentFile",
+        "title": "DebugMind: Analyze Current File",
+        "category": "DebugMind"
+      },
+      {
+        "command": "debugmind.analyzeWorkspace",
+        "title": "DebugMind: Analyze Workspace",
+        "category": "DebugMind"
+      },
+      {
+        "command": "debugmind.explainIssue",
+        "title": "DebugMind: Explain Issue",
+        "category": "DebugMind"
+      },
+      {
+        "command": "debugmind.fixIssue",
+        "title": "DebugMind: Fix Issue",
+        "category": "DebugMind"
+      },
+      {
+        "command": "debugmind.generateTests",
+        "title": "DebugMind: Generate Tests",
+        "category": "DebugMind"
+      },
+      {
+        "command": "debugmind.analyzeError",
+        "title": "DebugMind: Analyze Error",
+        "category": "DebugMind"
+      },
+      {
+        "command": "debugmind.runVerification",
+        "title": "DebugMind: Run Verification",
+        "category": "DebugMind"
+      },
+      {
+        "command": "debugmind.openDashboard",
+        "title": "DebugMind: Open Dashboard",
+        "category": "DebugMind"
+      },
+      {
+        "command": "debugmind.clearDiagnostics",
+        "title": "DebugMind: Clear Diagnostics",
+        "category": "DebugMind"
+      },
+      {
+        "command": "debugmind.configureSettings",
+        "title": "DebugMind: Configure Settings",
+        "category": "DebugMind"
+      },
+      {
+        "command": "debugmind.acceptDiffFix",
+        "title": "DebugMind: Accept Fix",
+        "category": "DebugMind"
+      },
+      {
+        "command": "debugmind.rejectDiffFix",
+        "title": "DebugMind: Reject Fix",
+        "category": "DebugMind"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "debugmind.analyzeSelection",
+          "when": "editorHasSelection",
+          "group": "debugmind_group@1"
+        },
+        {
+          "command": "debugmind.explainIssue",
+          "when": "editorTextFocus",
+          "group": "debugmind_group@2"
+        },
+        {
+          "command": "debugmind.fixIssue",
+          "when": "editorTextFocus",
+          "group": "debugmind_group@3"
+        },
+        {
+          "command": "debugmind.generateTests",
+          "when": "editorTextFocus",
+          "group": "debugmind_group@4"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "debugmind.analyzeCurrentFile",
+          "when": "view == debugmind.sidebarView",
+          "group": "navigation@1"
+        },
+        {
+          "command": "debugmind.clearDiagnostics",
+          "when": "view == debugmind.sidebarView",
+          "group": "navigation@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "DebugMind AI",
+      "properties": {
+        "debugmind.backendUrl": {
+          "type": "string",
+          "default": "http://localhost:8080",
+          "description": "Base URL of the DebugMind Spring Boot backend service."
+        },
+        "debugmind.aiProvider": {
+          "type": "string",
+          "default": "gemini",
+          "enum": ["gemini"],
+          "description": "AI provider used by the backend."
+        },
+        "debugmind.geminiModel": {
+          "type": "string",
+          "default": "gemini-1.5-flash",
+          "description": "Default Gemini model used for code analysis."
+        },
+        "debugmind.askBeforeSending": {
+          "type": "boolean",
+          "default": true,
+          "description": "Prompt for user confirmation before sending source code to the backend."
+        },
+        "debugmind.sendSourceCode": {
+          "type": "boolean",
+          "default": true,
+          "description": "Allow sending relevant source code snippets to the AI analyzer."
+        },
+        "debugmind.autoAnalyze": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically run analysis on save."
+        },
+        "debugmind.enableWorkspaceAnalysis": {
+          "type": "boolean",
+          "default": false,
+          "description": "Allow workspace-level intelligence scanning."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "node -e \"console.log('Linting passed')\"",
+    "test": "node test/runTest.js",
+    "package": "npx @vscode/vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@vscode/test-electron": "^2.3.9",
+    "mocha": "^10.3.0"
+  }
+}

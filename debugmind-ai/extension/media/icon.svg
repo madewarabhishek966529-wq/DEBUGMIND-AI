@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" fill="none">
+  <!-- Code bracket Left -->
+  <path d="M 28 32 C 18 32, 14 38, 14 50 C 14 58, 8 62, 4 64 C 8 66, 14 70, 14 78 C 14 90, 18 96, 28 96" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Code bracket Right -->
+  <path d="M 100 32 C 110 32, 114 38, 114 50 C 114 58, 120 62, 124 64 C 120 66, 114 70, 114 78 C 114 90, 110 96, 100 96" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Brain Central Glow & Silhouette -->
+  <path d="M 64 24 
+           C 54 24, 44 28, 40 38
+           C 34 42, 32 50, 34 58
+           C 32 66, 36 74, 42 78
+           C 40 84, 44 94, 54 98
+           C 58 100, 62 98, 64 96
+           C 66 98, 70 100, 74 98
+           C 84 94, 88 84, 86 78
+           C 92 74, 96 66, 94 58
+           C 96 50, 94 42, 88 38
+           C 84 28, 74 24, 64 24 Z" 
+        fill="#1e293b" stroke="#818cf8" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- Brain Hemisphere Divider -->
+  <path d="M 64 28 C 62 42, 66 54, 63 68 C 61 78, 64 88, 64 96" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 4"/>
+
+  <!-- Left Neural Nodes & Synapses -->
+  <circle cx="48" cy="44" r="3.5" fill="#38bdf8"/>
+  <circle cx="56" cy="56" r="3" fill="#a855f7"/>
+  <circle cx="46" cy="68" r="3.5" fill="#38bdf8"/>
+  <circle cx="54" cy="80" r="3" fill="#60a5fa"/>
+
+  <path d="M 48 44 L 56 56 L 46 68 L 54 80" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 48 44 L 40 50" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 46 68 L 36 72" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Right Neural Nodes & Synapses -->
+  <circle cx="80" cy="44" r="3.5" fill="#38bdf8"/>
+  <circle cx="72" cy="56" r="3" fill="#a855f7"/>
+  <circle cx="82" cy="68" r="3.5" fill="#38bdf8"/>
+  <circle cx="74" cy="80" r="3" fill="#60a5fa"/>
+
+  <path d="M 80 44 L 72 56 L 82 68 L 74 80" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 80 44 L 88 50" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 82 68 L 92 72" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Cross Hemisphere Bridge Synapse -->
+  <path d="M 56 56 L 72 56" stroke="#c084fc" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Center Spark -->
+  <polygon points="64,52 66,55 69,56 66,57 64,60 62,57 59,56 62,55" fill="#facc15"/>
+</svg>
