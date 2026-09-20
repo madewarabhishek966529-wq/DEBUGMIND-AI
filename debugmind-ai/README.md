@@ -138,11 +138,17 @@ SERVER_PORT=8080
 ```
 
 ### 2. Run the Spring Boot Backend
-Navigate to `debugmind-ai/backend`:
+Navigate to `debugmind-ai/backend` and run with Maven Wrapper or global Maven:
 ```bash
 cd debugmind-ai/backend
-mvn clean spring-boot:run
+.\mvnw.cmd spring-boot:run
 ```
+Or from the repository root, simply double-click or run:
+```powershell
+.\run-backend.bat
+```
+*(Automatically detects and frees port 8080 if already occupied).*
+
 Verify the backend is running:
 ```bash
 curl http://localhost:8080/api/v1/health
@@ -154,18 +160,17 @@ Expected response:
   "aiProvider": "gemini",
   "model": "gemini-1.5-flash",
   "sandboxAvailable": true,
-  "timestamp": "2026-09-19T10:15:00.000Z"
+  "timestamp": "2026-09-20T12:45:39.678519400Z"
 }
 ```
 
 ### 3. Run and Debug the VS Code Extension
-1. Open VS Code in `debugmind-ai/extension`.
-2. Install extension dependencies:
+1. Open this repository or `debugmind-ai/extension` in VS Code:
    ```bash
-   npm install
+   code .
    ```
-3. Press `F5` (Run Extension) to launch a new VS Code Extension Development Host window.
-4. In the Extension Development Host window:
+2. Press `F5` (Launch DebugMind AI Extension) to start an Extension Development Host window.
+3. In the Extension Development Host window:
    - Click on the **DebugMind AI** Activity Bar icon (Brain + Code Brackets).
    - Open any source code file (e.g. `UserService.java` or `app.js`).
    - Click **Analyze Current File**.
@@ -175,16 +180,22 @@ Expected response:
 
 ## 6. Testing
 
-### Run Extension Unit Tests
+### Run All Tests Across Extension & Backend (1-Click)
+From the repository root:
+```cmd
+.\run-all-tests.bat
+```
+
+### Run Extension Unit Tests Manually
 ```bash
 cd debugmind-ai/extension
 npm test
 ```
 
-### Run Backend Unit & Integration Tests
+### Run Backend Unit & Integration Tests Manually
 ```bash
 cd debugmind-ai/backend
-mvn test
+.\mvnw.cmd test
 ```
 
 ---
